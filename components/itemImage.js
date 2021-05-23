@@ -1,5 +1,5 @@
 import React from 'react';
-//import Image from "next/image";
+import Image from 'next/image'
 
 function isImageValid(src) {
     let promise = new Promise(resolve => {
@@ -21,7 +21,10 @@ function Img({ src, fallbackSrc, ...rest }) {
             }
         });
     }, [src]);
-    return <img {...rest} ref={imgEl} src={src} />;
+    return (<div>
+        <img {...rest} ref={imgEl} src={src} />
+        <Image {...rest} src={src} />
+    </div>);
 }
 
 const ItemImage = ({ brand, name }) => {
@@ -31,7 +34,7 @@ const ItemImage = ({ brand, name }) => {
             alt="some image"
             width={500}
             height={500}
-            src={`${name}.jpg`}
+            src={`/${name}.jpg`}
             fallbackSrc="/vercel.png"
         />
     );
