@@ -2,6 +2,7 @@ import styles from '../styles.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
 import ViewSource from '../components/view-source'
+import ItemImage from '../components/itemImage';
 
 const Code = (p) => <code className={styles.inlineCode} {...p} />
 
@@ -9,6 +10,11 @@ const Index = () => (
   <div className={styles.container}>
     <ViewSource pathname="pages/index.js" />
     <div className={styles.card}>
+    <div>
+        <ItemImage
+          name="mountains"
+        />
+      </div>
       <h1>Image Component with Next.js</h1>
       <p>
         This page demonstrates the usage of the{' '}
